@@ -2,7 +2,7 @@
 
 This repository provides a service to generate and send OTPs (One-Time Passwords) via email. Developers can integrate this service into their own applications to send OTPs to users. This service uses Gmail's API and Flask to handle requests.
 
-# App Link 
+## App Link 
 https://my-otp-app-769431799570.us-central1.run.app
 
 ## Features
