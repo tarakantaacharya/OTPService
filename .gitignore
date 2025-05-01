@@ -1,0 +1,37 @@
+# Ignore Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore credential and token files
+credentials.json
+token.json
+
+# Ignore log files
+*.log
+
+# Ignore local IDE config files
+.vscode/
+.idea/
+
+# Ignore Docker-related files
+*.dockerignore
+Dockerfile*
+
+# Ignore virtual environments
+venv/
+env/
+*.egg-info/
+
+# Ignore system-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore deployment-related files
+*.tar.gz
+*.zip

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+        }
+        
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .logo h1 {
+            color: #2563eb;
+            font-size: 24px;
+            font-weight: 600;
+        }
+        
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #555;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .input-field:focus {
+            border-color: #2563eb;
+            outline: none;
+        }
+        
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+        
+        .btn:disabled {
+            background-color: #b4c6fc;
+            cursor: not-allowed;
+        }
+        
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            display: none;
+        }
+        
+        .success {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+        
+        .error {
+            background-color: #fee2e2;
+            color: #b91c1c;
+            border: 1px solid #fecaca;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <h1>SecureVerify</h1>
+        </div>
+        
+        <h2>Send OTP Verification</h2>
+        
+        <form id="otp-form">
+            <div class="form-group" id="email-input-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" class="input-field" placeholder="Enter your email address" required>
+            </div>
+            
+            <button type="submit" class="btn" id="send-otp-btn">Send OTP</button>
+        </form>
+        
+        <div class="result" id="result-message"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const otpForm = document.getElementById('otp-form');
+            const resultMessage = document.getElementById('result-message');
+            const emailInput = document.getElementById('email');
+            const sendOtpBtn = document.getElementById('send-otp-btn');
+            
+            // Form submission
+            otpForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                sendOtpBtn.disabled = true;
+                sendOtpBtn.innerText = 'Sending...';
+                
+                // Simulate OTP sending (you can replace this with actual API logic)
+                setTimeout(function() {
+                    // Show success message
+                    resultMessage.className = 'result success';
+                    resultMessage.style.display = 'block';
+                    resultMessage.innerText = `OTP sent successfully to ${emailInput.value}`;
+                    
+                    sendOtpBtn.disabled = false;
+                    sendOtpBtn.innerText = 'Send OTP';
+                    
+                    // Reset form
+                    otpForm.reset();
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
