@@ -21,7 +21,7 @@ This repository provides a service to generate and send OTPs (One-Time Passwords
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/otp-service.git
+git clone https://github.com/tarakantaacharya/otp-service.git
 cd otp-service
 ```
 
